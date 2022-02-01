@@ -1,4 +1,5 @@
-
+package Test;
+import com.yoann.calcul.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
