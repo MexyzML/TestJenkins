@@ -48,4 +48,16 @@ class CalculsTest2 {
 	        assertNull(n);
 	}
 
+	@ParameterizedTest(name="Addition numéro {index}: nombre1={0}, nombre2={1}, résultat attendu = {2}")
+	@MethodSource("chargerJeuDeTest")
+	void testAddition(int firstNumber, int secondNumber, int expectedResult) 
+	{
+		// Partie paramétrée
+	        Calculs monCal = new Calculs(firstNumber, secondNumber);
+	        assertEquals(expectedResult, monCal.additionner(), "test en échec pour " + firstNumber + " + " + secondNumber + " != " + expectedResult); 
+
+	    // Partie indépendante (les paramètres peuvent ne servir qu'à une sous partie des tests)
+	        String n = null;
+	        assertNull(n);
+	}
 }
